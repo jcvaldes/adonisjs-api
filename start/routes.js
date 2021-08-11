@@ -19,16 +19,9 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello worlsd in JSON' }
 })
-// Route.post('users/register', () => {
-//   return { message: 'usuario registrado' }
-// })
 
 Route.group(() => {
-  // Route.post('api/v1/users/register', 'UserController.store')
-  Route.post('users/register', 'UserController.store')
+  Route.post('users/register', 'UserController.store');
+  Route.post('users/login', 'UserController.login');
 }).prefix('api/v1')
 
-Route.group(() => {
-  // Route.post('api/v1/users/register', 'UserController.store')
-  Route.post('users/register', 'UserController.store')
-}).prefix('api/v2')
